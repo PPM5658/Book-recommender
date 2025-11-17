@@ -2,10 +2,13 @@
 
 This repo contains all of the code to complete the freeCodeCamp course, "Build a Semantic Book Recommender with LLMs – Full Course". There are five components to this tutorial:
 * Text data cleaning (code in the notebook `data-exploration.ipynb`)
-* Semantic (vector) search and how to build a vector database (code in the notebook `vector-search.ipynb`). This allows users to find the most similar books to a natural language query (e.g., "a book about a person seeking revenge").
-* Doing text classification using zero-shot classification in LLMs (code in the notebook `text-classification.ipynb`). This allows us to classify the books as "fiction" or "non-fiction", creating a facet that users can filter the books on. 
-* Doing sentiment analysis using LLMs and extracting the emotions from text (code in the notebook `sentiment-analysis.ipynb`). This will allow users to sort books by their tone, such as how suspenseful, joyful or sad the books are.
-* Creating a web application using Gradio for users to get book recommendations (code in the file `gradio-dashboard.py`).
+Semantic (vector) search and building a vector database (all code now consolidated into the notebook vector_search.ipynb). This module generates embeddings for all books and performs similarity search, allowing users to find the most relevant books to any natural language query (e.g., "a book about a person seeking revenge").
+
+* Zero-shot text classification using LLMs (included inside `vector_search.ipynb`). This classifies each book as either "fiction" or "non-fiction", creating an additional metadata facet that users can filter on.
+
+* Sentiment and emotion analysis using LLMs (integrated into vector_search.ipynb). This extracts emotional attributes such as joy, suspense, or sadness, enabling users to sort books based on tone and emotional intensity.
+
+* Interactive recommendation dashboard using Gradio. This allows users to interact with the system through a web-based UI, submit queries, apply filters, and view personalized book recommendations.
 
 This project was initially created in Python 3.11. In order to run the project, the following dependencies are required:
 * [kagglehub](https://pypi.org/project/kagglehub/)
